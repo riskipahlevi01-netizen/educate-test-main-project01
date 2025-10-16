@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Educate - Wadah Generasi Muda Menggapai Cita Mulia. Lembaga bimbingan belajar terbaik di Indonesia untuk persiapan masuk PTN, kedokteran, dan SMA favorit.">
+    <meta name="keywords" content="bimbel, les privat, persiapan PTN, kedokteran, SIMAK UI, Educate">
+    <meta name="author" content="Educate">
+    <title>Tentang Kami - Educate</title>
+
+
+    <link rel="apple-touch-icon" href="/images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/icon-167x167.png">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/style.edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header></header>
+
+     <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" >
+                <h1 >Educate Blog</h1>
+            </div>
+            <div class="hero-image">
+                <img src="/images/wp-content/uploads/blogs/DSC09215-1-1024x1536.webp" alt="Educate Hero Illustration" loading="lazy" style="width: 400px; max-width: 40%; background: none; box-shadow: none;">
+            </div>
+        </div>
+    </section>
+
+<main>
+    <div id="blog-list" class="blog-container"></div>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+
+  <script>
+    // ======================
+    // DATA BLOG
+    // ======================
+    const blogs = [
+      { title: "Cek Peluang Kelolosan! Segini Persentase Keketatan Prodi UNAIR di Jalur SNBP 2025", img: "/images/wp-content/uploads/blogs/Keketatan-Prodi-Unair.webp", desc: "" },
+      { title: "5 Tips Menjaga Konsentrasi Saat Belajar", img: "images/blog2.jpg", desc: "Fokus dan disiplin bisa dilatih dengan cara sederhana. Yuk simak bagaimana caranya!" },
+      { title: "Cara Memilih Jurusan Kuliah yang Tepat", img: "images/blog3.jpg", desc: "Kenali minat, bakat, dan peluang kerja sebelum memilih jurusan kuliah." },
+      { title: "Rahasia Lulus UTBK dengan Nilai Tinggi", img: "images/blog4.jpg", desc: "Tips dan strategi jitu agar nilai UTBK kamu menembus kampus impian." },
+      { title: "Motivasi Belajar dari Alumni Educate", img: "images/blog5.jpg", desc: "Cerita inspiratif dari alumni yang berhasil lolos kedokteran." },
+      { title: "Pentingnya Belajar Kelompok yang Efektif", img: "images/blog6.jpg", desc: "Belajar bareng bisa jadi lebih produktif kalau dilakukan dengan metode yang benar." },
+      { title: "Cara Mengatur Jadwal Belajar Harian", img: "images/blog7.jpg", desc: "Panduan membuat jadwal belajar yang realistis dan efisien." },
+      { title: "Mengatasi Rasa Malas Saat Belajar", img: "images/blog8.jpg", desc: "Kunci utama untuk konsisten belajar ada di pola pikir dan motivasi diri." },
+      { title: "Teknik Membaca Cepat dan Efektif", img: "images/blog9.jpg", desc: "Tingkatkan kecepatan membaca tanpa kehilangan pemahaman materi." },
+      { title: "Manfaat Belajar di Bimbingan Intensif", img: "images/blog10.jpg", desc: "Program intensif bisa bantu kamu fokus ke materi penting menjelang ujian." },
+      { title: "Panduan Belajar Mandiri dari Rumah", img: "images/blog11.jpg", desc: "Tips mengatur waktu dan lingkungan belajar agar tetap produktif di rumah." },
+      { title: "Mengenal Pola Soal UTBK 2025", img: "images/blog12.jpg", desc: "Simak bagaimana pola soal terbaru agar kamu bisa mempersiapkan diri dengan tepat!" }
+    ];
+
+    // ======================
+    // PENGATURAN PAGINATION
+    // ======================
+    const itemsPerPage = 9; // tampilkan 9 artikel per halaman
+    let currentPage = 1;
+    const totalPages = Math.ceil(blogs.length / itemsPerPage);
+
+    const blogList = document.getElementById('blog-list');
+    const pagination = document.getElementById('pagination');
+
+    // Fungsi menampilkan blog
+    function displayBlogs(page) {
+      blogList.innerHTML = '';
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const paginatedItems = blogs.slice(start, end);
+
+      paginatedItems.forEach(blog => {
+        const card = document.createElement('div');
+        card.classList.add('blog-card');
+        card.innerHTML = `
+          <img src="${blog.img}" alt="${blog.title}">
+          <div class="blog-content">
+            <h3>${blog.title}</h3>
+            <p>${blog.desc}</p>
+          </div>
+        `;
+        blogList.appendChild(card);
+      });
+    }
+
+    // Fungsi membuat pagination
+    function setupPagination() {
+      pagination.innerHTML = '';
+
+      const prev = document.createElement('a');
+      prev.textContent = '« Previous';
+      prev.onclick = () => changePage(currentPage - 1);
+      prev.style.visibility = currentPage === 1 ? 'hidden' : 'visible';
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.textContent = `Page ${i}`;
+        if (i === currentPage) pageLink.classList.add('active');
+        pageLink.onclick = () => changePage(i);
+        pagination.appendChild(pageLink);
+      }
+
+      const next = document.createElement('a');
+      next.textContent = 'Next »';
+      next.onclick = () => changePage(currentPage + 1);
+      next.style.visibility = currentPage === totalPages ? 'hidden' : 'visible';
+      pagination.appendChild(next);
+    }
+
+    function changePage(page) {
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      displayBlogs(currentPage);
+      setupPagination();
+    }
+
+    // Inisialisasi
+    displayBlogs(currentPage);
+    setupPagination();
+  </script>
+
+
+
+
+
+
+
+
+    <footer></footer>
+    
+    <div id="contact" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Kontak Kami</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="program">Program yang Diminati</label>
+                <select id="program" name="program" required>
+                    <option value="">Pilih Program</option>
+                    <option value="educamp">Educamp</option>
+                    <option value="exclusive-class">Exclusive Class</option>
+                    <option value="private-class">Private Class</option>
+                    <option value="online-class">Online Class</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </form>
+    </div>
+    </div>
+
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
