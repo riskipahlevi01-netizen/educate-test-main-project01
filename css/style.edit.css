@@ -3708,3 +3708,62 @@ textarea:focus {
         display: none;
     }
 }
+/* Hero Section */
+.hero-section {
+    background-color: #2196F3;
+    padding: 50px 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFEB3B; /* Gold color */
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: #FFEB3B;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.score {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Image container */
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
