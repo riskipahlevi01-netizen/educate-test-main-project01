@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Deteksi apakah halaman di root atau subfolder (tentang-kami, blogs, dll)
   const basePath =
     window.location.pathname.includes("/tentang-kami") ||
-    window.location.pathname.includes("/blogs")||
-    window.location.pathname.includes("/bimbel-spesialis-kedokteran")
+      window.location.pathname.includes("/blogs") ||
+      window.location.pathname.includes("/bimbel-spesialis-kedokteran")
       ? ".."
       : ".";
 
@@ -264,10 +264,9 @@ class EducateWebsite {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: ${
-        type === "success"
-          ? "#10b981"
-          : type === "error"
+      background: ${type === "success"
+        ? "#10b981"
+        : type === "error"
           ? "#ef4444"
           : "#3b82f6"
       };
@@ -328,3 +327,86 @@ style.textContent = `
   .header { transition: transform 0.3s ease; }
 `;
 document.head.appendChild(style);
+
+
+// let currentIndex = 0;
+// const slides = document.querySelectorAll('.unique-slide');
+// const totalSlides = slides.length;
+// const slider = document.querySelector('.unique-slider');
+
+// // Fungsi untuk memperbarui posisi slider
+// function updateSliderPosition() {
+//   // Pastikan transisi halus
+//   slider.style.transition = "transform 0.5s ease";
+//   // Geser berdasarkan indeks
+//   slider.style.transform = `translateX(-${currentIndex * 33}%)`;
+// }
+
+// // Tombol navigasi ke slide berikutnya
+// document.querySelector('.unique-next').addEventListener('click', () => {
+//   if (currentIndex < totalSlides - 1) {
+//     currentIndex++;
+//   } else {
+//     currentIndex = 0;
+//   }
+//   updateSliderPosition();
+// });
+
+// // Tombol navigasi ke slide sebelumnya
+// document.querySelector('.unique-prev').addEventListener('click', () => {
+//   if (currentIndex > 0) {
+//     currentIndex--;
+//   } else {
+//     currentIndex = totalSlides - 1;
+//   }
+//   updateSliderPosition();
+// });
+
+// // Auto slide setiap 3 detik
+// setInterval(() => {
+//   currentIndex++;
+//   if (currentIndex >= totalSlides) {
+//     currentIndex = 0;
+//   }
+//   updateSliderPosition();
+// }, 3000); // Ganti slide setiap 3 detik
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.unique-slide');
+const totalSlides = slides.length;
+const slider = document.querySelector('.unique-slider');
+
+// Fungsi untuk memperbarui posisi slider
+function updateSliderPosition() {
+  slider.style.transition = "transform 0.5s ease";
+  slider.style.transform = `translateX(-${currentIndex * 33}%)`;
+}
+
+// Tombol navigasi ke slide berikutnya
+document.querySelector('.unique-next').addEventListener('click', () => {
+  if (currentIndex < totalSlides - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateSliderPosition();
+});
+
+// Tombol navigasi ke slide sebelumnya
+document.querySelector('.unique-prev').addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = totalSlides - 1;
+  }
+  updateSliderPosition();
+});
+
+// Auto slide setiap 3 detik
+setInterval(() => {
+  currentIndex++;
+  if (currentIndex >= totalSlides) {
+    currentIndex = 0;
+  }
+  updateSliderPosition();
+}, 3000); // Ganti slide setiap 3 detik

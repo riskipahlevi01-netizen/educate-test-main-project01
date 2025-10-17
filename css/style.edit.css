@@ -3169,6 +3169,26 @@ textarea:focus {
     transition: transform 0.4s ease;
 }
 
+.diamond-image2 img {
+    transform: scaleX(-1);
+    /* This will mirror the image horizontally */
+    width: 100%;
+    /* Optional: Adjust the width to ensure it fits properly */
+    height: auto;
+    /* Optional: Maintain aspect ratio */
+}
+
+.top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    /* Adjust size for the smaller image */
+    height: auto;
+    background: white;
+    border-radius: 5px;
+}
+
 .diamond-image img:hover {
     transform: scale(1.05) rotate(0deg);
     /* sedikit zoom saat hover */
@@ -3521,7 +3541,7 @@ textarea:focus {
 .slider-track {
     display: flex;
     width: max-content;
-    animation: slide 20s linear infinite;
+    animation: slide 90s linear infinite;
 }
 
 .slider-track img {
@@ -3708,6 +3728,7 @@ textarea:focus {
         display: none;
     }
 }
+
 /* Hero Section */
 .hero-section {
     background-color: #2196F3;
@@ -3733,7 +3754,8 @@ textarea:focus {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #FFEB3B; /* Gold color */
+    color: #FFEB3B;
+    /* Gold color */
 }
 
 .content p {
@@ -3766,4 +3788,649 @@ textarea:focus {
     width: 200px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk bagian biru */
+.blue {
+    color: #ffffff;
+}
+
+/* Gaya untuk bagian kuning */
+.yellow {
+    color: #FFD700;
+}
+
+/* Styling untuk container testimonial */
+.testimonial {
+    display: flex;
+    align-items: center;
+    background-color: #00A6FF;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk gambar alumni */
+.alumni {
+    display: flex;
+    margin-right: 100%;
+}
+
+.alumni img {
+    width: 50px;
+    /* Lebar gambar alumni */
+    height: 50px;
+    /* Pastikan tinggi gambar sama dengan lebar */
+    border-radius: 50%;
+    /* Membuat gambar berbentuk lingkaran */
+    margin-right: 5px;
+    transition: transform 0.3s;
+}
+
+/* Efek saat hover pada gambar alumni */
+.alumni img:hover {
+    transform: scale(1.1);
+}
+
+/* Styling untuk informasi text */
+.info {
+    color: white;
+}
+
+.alumni-count {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* .rating {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 10px;
+} */
+.rating {
+    width: 100%;
+    overflow: hidden;
+    /* Menyembunyikan gambar yang tidak tampak */
+    border-radius: 10px;
+}
+
+/* Slider alumni (gambar-gambar) */
+.alumni-slider {
+    display: flex;
+    width: max-content;
+    animation: slide2 80s infinite linear;
+    /* Animasi bergerak ke kiri */
+    border-radius: 100%;
+}
+
+.stars {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Animasi slide untuk bergerak ke kiri */
+@keyframes slide2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-20%);
+    }
+
+    40% {
+        transform: translateX(-40%);
+    }
+
+    60% {
+        transform: translateX(-60%);
+    }
+
+    80% {
+        transform: translateX(-80%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.masalah-section {
+    background-color: #f4f4f9;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.image-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.text-container {
+    width: 55%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+.text-container ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.text-container ul li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #0066cc;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0055a0;
+}
+
+.bottom-image {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.bottom-image img {
+    width: 200px;
+    height: auto;
+}
+
+.custom-slide-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.custom-slide-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+.slide-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.slide-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.slide-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.slide-content p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.cta-button-container {
+    margin-top: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0055a0;
+}
+
+/* slide mengapa harus educate */
+.unique-slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.unique-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.unique-slide {
+    flex: 0 0 33.33%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.unique-slide img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.unique-slide h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.unique-slide p {
+    font-size: 14px;
+    color: #666;
+}
+
+.unique-slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.unique-prev,
+.unique-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.unique-prev:hover,
+.unique-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.unique-slide .institution {
+    color: #4a7a94;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.video-thumbnail {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.video-thumbnail iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 180px;
+}
+
+.program-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.program-container h2 {
+    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.program-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.program-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+.program-header {
+    background-color: #1f8fd2;
+    color: #fff;
+    text-align: center;
+    padding: 25px 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge.rekomendasi {
+    background-color: #ff7f00;
+}
+
+.program-header h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.program-header p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.program-body {
+    padding: 20px;
+    background-color: #fff;
+    text-align: left;
+    height: 220px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.program-body h4 {
+    color: #2e3a59;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.program-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.program-body li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.program-body li i {
+    color: #22c55e;
+    font-size: 16px;
+}
+
+.program-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.program-footer button {
+    background-color: #f97316;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.program-footer button:hover {
+    background-color: #ea580c;
+}
+
+@media (max-width: 992px) {
+    .program-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.testimonial-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #e5f2ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card .quote-icon {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #1f8fd2;
+}
+
+
+.testimonial-card .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e3a59;
+    margin-top: 15px;
+}
+
+.testimonial-card .institution {
+    color: #4a7a94;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.testimonial-card button {
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card button:hover {
+    background-color: #ea580c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.custom-slide-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e5f2ff;
+}
+
+h2 {
+    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.unique-slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Hide overflow to show only one slide */
+}
+
+.unique-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.unique-slide {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.video-thumbnail {
+    margin-bottom: 15px;
+}
+
+.video-thumbnail iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 180px;
+}
+
+.unique-slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.unique-prev,
+.unique-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.prev,
+.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+
+
+.unique-prev:hover,
+.unique-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .unique-slider {
+        flex-direction: column;
+    }
 }
