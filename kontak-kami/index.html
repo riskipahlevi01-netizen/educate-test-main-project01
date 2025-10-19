@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Educate - Wadah Generasi Muda Menggapai Cita Mulia. Lembaga bimbingan belajar terbaik di Indonesia untuk persiapan masuk PTN, kedokteran, dan SMA favorit.">
+    <meta name="keywords" content="bimbel, les privat, persiapan PTN, kedokteran, SIMAK UI, Educate">
+    <meta name="author" content="Educate">
+    <title>Kontak Kami - Educate</title>
+
+    <!-- ✅ LOGO TAB (Favicon & App Icons) -->
+    <!-- Favicon standar -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+
+    <!-- Shortcut icon untuk browser lama -->
+    <link rel="shortcut icon" href="/images/logo.png"
+        type="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+
+    <!-- Apple Touch Icons untuk iPhone/iPad -->
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/wp-content/cropped-cropped-educate-2-1-1-192x192.webp">
+
+    <!-- Android manifest (opsional jika nanti mau PWA) -->
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="/css/style.edit.css">
+
+    <!-- ✅ Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header></header>
+
+    <section class="branches-new">
+        <h2 class="branches-new-title">Temukan Cabang Terdekat di Kotamu</h2>
+        <div class="branches-new-container">
+
+            <div class="branches-new-map" style="max-width: 50%; height: 50%;">
+                <div id="branch-map-cibubur" class="branches-new-map-iframe">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3965.1465242718277!2d106.916513!3d-6.375078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69937e370aa4e7%3A0xa6d799648d88ed1!2sBimbel%20Sukses%20CPNS!5e0!3m2!1sen!2sid!4v1753791707828!5m2!1sen!2sid"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+
+            </div>
+
+            <div class="contact-us" >
+                <h3>Hubungi Kami</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Telepon</strong>
+                        <p>+62 857-7765-7727</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <p>info@suksescpns.id</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Alamat</strong>
+                        <p>Jl. Ruko Kranggan Permai, RT.003/RW.010, Jatisampurna, Kec. Jatisampurna, Kota Bekasi, Jawa
+                            Barat 17435</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <footer></footer>
+
+    <div id="contact" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kontak Kami</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program yang Diminati</label>
+                    <select id="program" name="program" required>
+                        <option value="">Pilih Program</option>
+                        <option value="educamp">Educamp</option>
+                        <option value="exclusive-class">Exclusive Class</option>
+                        <option value="private-class">Private Class</option>
+                        <option value="online-class">Online Class</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Deteksi apakah halaman di root atau subfolder (tentang-kami, blogs, dll)
   const basePath =
-    window.location.pathname.includes("/tentang-kami") ||
+      window.location.pathname.includes("/tentang-kami") ||
       window.location.pathname.includes("/blogs") ||
-      window.location.pathname.includes("/bimbel-spesialis-kedokteran")
+      window.location.pathname.includes("/bimbel-spesialis-kedokteran") ||
+      window.location.pathname.includes("/lolos-ptn-favorit")      ||
+      window.location.pathname.includes("/kontak-kami")
       ? ".."
       : ".";
 
@@ -410,3 +412,47 @@ setInterval(() => {
   }
   updateSliderPosition();
 }, 3000); // Ganti slide setiap 3 detik
+
+$(document).ready(function(){
+  $('.testimonials-slider').slick({
+    infinite: true, // Infinite scrolling
+    slidesToShow: 3, // Show 3 testimonials at a time
+    slidesToScroll: 1, // Scroll 1 slide at a time
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 2000, // Delay between slides
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2, // Show 2 testimonials on smaller screens
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1, // Show 1 testimonial on very small screens
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+});
+
+document.querySelectorAll('.clickable-image').forEach(function(image) {
+    image.addEventListener('click', function() {
+        const imageDetail = this.nextElementSibling;
+        imageDetail.classList.add('active');
+        imageDetail.querySelector('img').src = this.src; // Menampilkan gambar detail
+    });
+});
+
+// Menutup gambar detail saat klik overlay
+document.querySelectorAll('.image-detail').forEach(function(detail) {
+    detail.addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+});
+
+// 
+
